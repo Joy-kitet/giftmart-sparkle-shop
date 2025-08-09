@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
+import { Search, ShoppingCart, User, Menu, X, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import { useAuth } from "@/hooks/useAuth";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
   const cartItemsCount = 3; // This would come from cart state
 
   const navItems = [
@@ -48,10 +50,15 @@ const Header = () => {
           {/* Actions */}
           <div className="flex items-center space-x-4">
             {/* Account */}
-            <Button variant="ghost" size="sm" className="hidden md:flex items-center space-x-2">
-              <User className="h-5 w-5" />
-              <span>Account</span>
-            </Button>
+            <div className="hidden md:flex items-center space-x-2">
+              <span className="text-sm text-muted-foreground">
+                Hello, {user?.email?.split('@')[0]}
+              </span>
+              <Button variant="ghost" size="sm" onClick={signOut} className="flex items-center space-x-2">
+                <LogOut className="h-4 w-4" />
+                <span>Sign Out</span>
+              </Button>
+            </div>
 
             {/* Cart */}
             <Button variant="ghost" size="sm" className="relative">
@@ -118,10 +125,15 @@ const Header = () => {
             </nav>
             
             {/* Mobile account */}
-            <Button variant="outline" className="w-full justify-start">
-              <User className="h-4 w-4 mr-2" />
-              My Account
-            </Button>
+            <div className="space-y-2">
+              <div className="px-4 py-2 text-sm text-muted-foreground">
+                Signed in as {user?.email}
+              </div>
+              <Button variant="outline" className="w-full justify-start" onClick={signOut}>
+                <LogOut className="h-4 w-4 mr-2" />
+                Sign Out
+              </Button>
+            </div>
           </div>
         )}
       </div>
