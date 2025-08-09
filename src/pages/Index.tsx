@@ -5,6 +5,8 @@ import FeaturedProducts from "@/components/FeaturedProducts";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  console.log("Index component rendering");
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
