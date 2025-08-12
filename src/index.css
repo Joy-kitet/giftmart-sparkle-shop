@@ -1,7 +1,7 @@
 
 
 const Footer = () => {
- 
+  return (
     <footer className="bg-foreground text-background">
       {/* Newsletter Section */}
       <div className="border-b border-background/10">
