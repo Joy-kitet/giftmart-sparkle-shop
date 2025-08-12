@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Twitter, Instagram, Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
