@@ -125,15 +125,15 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background flex items-center justify-center p-4">
-      <Card className="w-full max-w-md card-elegant">
+    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-white flex items-center justify-center p-4">
+      <Card className="w-full max-w-md bg-white border border-gray-200 rounded-xl shadow-lg">
         <CardHeader className="text-center space-y-4">
           <div className="flex justify-center">
-            <div className="p-3 bg-gradient-primary rounded-full">
-              <ShoppingBag className="h-8 w-8 text-primary-foreground" />
+            <div className="p-3 bg-green-600 rounded-full">
+              <ShoppingBag className="h-8 w-8 text-white" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold gradient-hero bg-clip-text text-transparent">
+          <CardTitle className="text-2xl font-bold text-green-600">
             Welcome to GiftMart
           </CardTitle>
           <CardDescription>
@@ -186,7 +186,7 @@ const Auth = () => {
                     </Button>
                   </div>
                 </div>
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white" disabled={loading}>
                   {loading ? "Signing in..." : "Sign In"}
                 </Button>
               </form>
@@ -231,11 +231,11 @@ const Auth = () => {
                       )}
                     </Button>
                   </div>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-gray-500">
                     Password must be at least 6 characters
                   </p>
                 </div>
-                <Button type="submit" className="w-full" disabled={loading}>
+                <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white" disabled={loading}>
                   {loading ? "Creating account..." : "Create Account"}
                 </Button>
               </form>
